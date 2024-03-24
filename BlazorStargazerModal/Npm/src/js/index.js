@@ -83,11 +83,10 @@ export async function signConstellation(message, _metadata) {
     try {
         if (walletAvailable) {
             let provider = dagProvider;
-            // Removed TypeScript type definitions
 
             const signatureRequest = {
                 content: message,
-                metadata: _metadata
+                metadata: {_metadata}
             };
             const utf8Encode = unescape(encodeURIComponent(JSON.stringify(signatureRequest)));
             const signatureRequestEncoded = window.btoa(utf8Encode);

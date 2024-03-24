@@ -7,7 +7,7 @@ namespace BlazorStargazerModal.Interfaces
         ValueTask DisposeAsync();
         Task EnsureWalletAvailability();
         Task ConnectWallet();
-        Task<ModalResult<SignatureResult>> SignMessage(WalletType wallet, string message, object[] metadata);
+        Task<ModalResult<SignatureResult>> SignMessage(WalletType wallet, string message, dynamic metadata);
         Task<ModalResult<string[]>> GetAddress(WalletType wallet);
     }
 }

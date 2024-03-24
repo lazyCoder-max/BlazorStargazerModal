@@ -70,7 +70,7 @@ async function signConstellation(message, _metadata) {
       let provider2 = dagProvider;
       const signatureRequest = {
         content: message,
-        metadata: _metadata
+        metadata: {}
       };
       const utf8Encode = unescape(encodeURIComponent(JSON.stringify(signatureRequest)));
       const signatureRequestEncoded = window.btoa(utf8Encode);
