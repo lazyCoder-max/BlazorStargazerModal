@@ -35,18 +35,17 @@ namespace BlazorStargazerModal
             await EnsureWalletAvailability();
             var stringResult = await module.InvokeAsync<string>("activateStargazerProviders");
             var result = JsonSerializer.Deserialize<ModalResult<string>>(stringResult);
-            await GetAddress(WalletType.DAG);
-            await SignMessage(WalletType.DAG, "Welcome to Obius", null);
         }
-        public async Task GetAddress(WalletType wallet)
+        public async Task<ModalResult<string[]>> GetAddress(WalletType wallet)
         {
             var module = await _moduleTask.Value;
             await EnsureWalletAvailability();
             var provider = wallet == WalletType.DAG ? "dag_accounts" : "eth_accounts";
             var stringResult = await module.InvokeAsync<string>("getAddress", provider);
             var result = JsonSerializer.Deserialize<ModalResult<string[]>>(stringResult);
+            return result;
         }
-        public async Task SignMessage(WalletType wallet, string message, object[] metadata)
+        public async Task<ModalResult<SignatureResult>> SignMessage(WalletType wallet, string message, object[] metadata)
         {
             var module = await _moduleTask.Value;
             await EnsureWalletAvailability();
@@ -59,6 +58,7 @@ namespace BlazorStargazerModal
             };
             var stringResult = await module.InvokeAsync<string>("signConstellation", message, _metadata);
             var result = JsonSerializer.Deserialize<ModalResult<SignatureResult>>(stringResult);
+            return result;
         }
         public async ValueTask DisposeAsync()
         {
