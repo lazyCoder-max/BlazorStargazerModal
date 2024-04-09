@@ -12,11 +12,28 @@
 	  <Copyright>Copyright 2024 (c) Kidus. All rights reserved.</Copyright>
 	  <EmbedUntrackedSources>true</EmbedUntrackedSources>
 	  <OutputType>Library</OutputType>
+	  <Title>BlazorStargazerModal</Title>
+	  <PackageIcon>stargazer.png</PackageIcon>
+	  <PackageReadmeFile>readme.md</PackageReadmeFile>
+	  <RepositoryUrl>https://github.com/lazyCoder-max/BlazorStargazerModal</RepositoryUrl>
+	  <PackageProjectUrl>https://github.com/lazyCoder-max/BlazorStargazerModa</PackageProjectUrl>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Npm\src\js\" />
     <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\Downloads\stargazer.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\..\..\OneDrive\Desktop\readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
