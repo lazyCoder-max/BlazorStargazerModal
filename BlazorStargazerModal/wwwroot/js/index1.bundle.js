@@ -96,4 +96,4 @@ export {
   getAddress,
   signConstellation
 };
-//# sourceMappingURL=index.bundle.js.map
+//# sourceMappingURL=index1.bundle.js.map
