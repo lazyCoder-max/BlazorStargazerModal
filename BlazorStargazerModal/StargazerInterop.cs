@@ -14,7 +14,7 @@ namespace BlazorStargazerModal
         public StargazerInterop(IJSRuntime jsRuntime)
         {
             _moduleTask = new(() => jsRuntime.InvokeAsync<IJSObjectReference>("import",
-                "./_content/BlazorStargazerModal/js/index.bundle.js").AsTask());
+                "./_content/BlazorStargazerModal/js/index1.bundle.js").AsTask());
             _jsRef = DotNetObjectReference.Create(this);
         }
 

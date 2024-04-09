@@ -49,7 +49,7 @@ export async function activateStargazerProviders() {
 
             ethProvider = walletProvider.getProvider('ethereum');
             await ethProvider.activate();
-            return getSuccessResponse(provider);
+            return getSuccessResponse(ethProvider);
         }
         else {
             return getErrorResponse("Wallet is not Available");
@@ -86,7 +86,7 @@ export async function signConstellation(message, _metadata) {
 
             const signatureRequest = {
                 content: message,
-                metadata: {_metadata}
+                metadata: _metadata
             };
             const utf8Encode = unescape(encodeURIComponent(JSON.stringify(signatureRequest)));
             const signatureRequestEncoded = window.btoa(utf8Encode);
